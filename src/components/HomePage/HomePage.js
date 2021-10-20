@@ -19,7 +19,7 @@ export default function HomePage () {
     <ul className="cardList" >
       {fetchGetHome?.data.results.map(
           (e)=>{
-              return <li className="card"  id={e.id}> 
+              return <li className="card"  key={e.id}> 
               <NavLink to={`movie/${e.id}`}>{e.original_title || e.name}</NavLink>
               {/* <img src={baseSource+e.backdrop_path}/> */}
               </li>})}  

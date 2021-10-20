@@ -16,7 +16,7 @@ const Reviews = () => {
     return (
         <>
         {fetchReviws && fetchReviws.data.results.map(i=>{
-            return (<div><h6>Expert review : </h6> <p>{i.content}</p></div>)
+            return (<div key={i.id}><h6>Expert review : </h6> <p>{i.content}</p></div>)
         })}
         </>
     )  

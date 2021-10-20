@@ -16,7 +16,7 @@ const Cast = () => {
     return (
         <>
         {fetchCasts && fetchCasts.data.cast.map(i=>{
-            return (<li>
+            return (<li key={i.id}>
                          <h5>{i.name}</h5>
                         <p>{i.known_for_department}</p>
                        <img src={baseSource+i.profile_path}/>

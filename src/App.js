@@ -3,11 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from "./components/HomePage/HomePage";
 import MovieDetailsPage from "./components/MovieDetailsPage/MovieDetailsPage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
   <>
-  <Switch>
+   <NavBar/>
+  
+  <Switch> 
   <Route path="/" exact>
     <HomePage />
   </Route>
