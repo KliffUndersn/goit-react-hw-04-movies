@@ -26,9 +26,6 @@ export default function MoviesPage() {
     }
   }, [searchQuery]);
 
-  // useEffect(()=>{
-  // },[])
-
   const handleSubmit = e => {
     e.preventDefault();
     history.push({
@@ -37,8 +34,6 @@ export default function MoviesPage() {
     });
     console.log(history);
     setSearchQuery(searchValue);
-    // setSearchValue("")
-    // console.log(history)
   };
 
   const handleChange = e => {
@@ -62,10 +57,10 @@ export default function MoviesPage() {
         />
       </form>
 
-      <ul className="cardList">
+      <ul className="ImageGallery">
         {fetchMoviesPage?.data.results.map(e => {
           return (
-            <li className="card" key={e.id}>
+            <li className="ImageGalleryItem" key={e.id}>
               <NavLink
                 to={{
                   pathname: `movie/${e.id}`,
@@ -73,9 +68,10 @@ export default function MoviesPage() {
                   search: `search=${searchValue || searchCheck}`,
                 }}
               >
-                {e.original_title || e.name}
+                <h1 className="Searchbar ">{e.original_title || e.name}</h1>
+
+                <img src={baseSource + e.backdrop_path} alt="" />
               </NavLink>
-              {/* <img src={baseSource+e.backdrop_path}/> */}
             </li>
           );
         })}

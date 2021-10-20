@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react';
-import { NavLink, Route, useRouteMatch, useLocation, useParams, Switch } from 'react-router-dom';
-import { fetchMovieDetailsPage } from '../fetch/fetch';
-
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
+  return (
+    <>
+      <h3 className="Navbar">
+        <NavLink className="Navbar" to={`/`}>
+          HomePage{' '}
+        </NavLink>
+        <NavLink className="Navbar" to={`/movie`}>
+          {' '}
+          Search
+        </NavLink>
+      </h3>
+    </>
+  );
+};
 
-
-    return (<>
-        <NavLink to={`/`}>HomePage </NavLink >
-        <NavLink to={`/movie`}> Search</NavLink >
-
-    </>)
-}
-
-export default NavBar
+export default NavBar;
