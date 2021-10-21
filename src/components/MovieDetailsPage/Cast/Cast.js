@@ -1,13 +1,6 @@
-import { fetchMovieCasts } from '../../fetch/fetch';
+import { fetchMovieCasts } from '../../../fetch/fetch';
 import { useState, useEffect } from 'react';
-import {
-  NavLink,
-  Route,
-  useRouteMatch,
-  useLocation,
-  useParams,
-  Switch,
-} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Cast = () => {
   const [fetchCasts, setFetchCasts] = useState(null);

@@ -8,9 +8,10 @@ import {
   Switch,
   useHistory,
 } from 'react-router-dom';
-import { fetchMovieDetailsPage } from '../fetch/fetch';
+import { fetchMovieDetailsPage } from '../../fetch/fetch';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+import routes from '../../routes';
 
 export default function MovieDetailsPage() {
   const [fetchMovieDetails, setFetchMovieDetails] = useState(null);
@@ -70,7 +71,7 @@ export default function MovieDetailsPage() {
           <ul>
             <NavLink
               to={{
-                pathname: `${url}/Cast`,
+                pathname: `${url}${routes.cast}`,
                 search: searchCheck && `search=${searchCheck}`,
               }}
             >
@@ -78,7 +79,7 @@ export default function MovieDetailsPage() {
             </NavLink>
             <NavLink
               to={{
-                pathname: `${url}/Reviews`,
+                pathname: `${url}${routes.reviews}`,
                 search: searchCheck && `search=${searchCheck}`,
               }}
             >
@@ -88,10 +89,10 @@ export default function MovieDetailsPage() {
         </div>
       }
       <Switch>
-        <Route path={`${path}/Cast`}>
+        <Route path={`${path}${routes.cast}`}>
           <Cast />
         </Route>
-        <Route path={`${path}/Reviews`}>
+        <Route path={`${path}${routes.reviews}`}>
           <Reviews />
         </Route>
       </Switch>

@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
-import {
-  NavLink,
-  Route,
-  useRouteMatch,
-  useHistory,
-  useLocation,
-} from 'react-router-dom';
-import { fetchSearchMoviesPage } from '../fetch/fetch';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { fetchSearchMoviesPage } from '../../fetch/fetch';
+import routes from '../../routes';
 
 export default function MoviesPage() {
   const [fetchMoviesPage, setFetchMoviesPage] = useState(null);
@@ -63,7 +58,7 @@ export default function MoviesPage() {
             <li className="ImageGalleryItem" key={e.id}>
               <NavLink
                 to={{
-                  pathname: `movie/${e.id}`,
+                  pathname: `${routes.moviesPage}/${e.id}`,
                   state: location.pathname,
                   search: `search=${searchValue || searchCheck}`,
                 }}

@@ -1,4 +1,4 @@
-import { fetchMovieReviws } from '../../fetch/fetch';
+import { fetchMovieReviws } from '../../../fetch/fetch';
 import { useState, useEffect } from 'react';
 import {
   NavLink,

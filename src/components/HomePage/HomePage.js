@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { fetchGetHomeTrending } from '../fetch/fetch';
+import { fetchGetHomeTrending } from '../../fetch/fetch';
 
 export default function HomePage() {
   const [fetchGetHome, setFetchGetHome] = useState(null);
